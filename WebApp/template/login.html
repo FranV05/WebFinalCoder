@@ -1,0 +1,15 @@
+<title>Azteka Tattoo | Iniciar Sesion</title>
+{% extends "modelo.html" %}
+
+{% load static %}
+
+{% block contenido %}
+<body>
+    <div style="position: relative; top: 30px">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Iniciar Sesion</button>
+    </form></div>
+</body>
+{% endblock %}

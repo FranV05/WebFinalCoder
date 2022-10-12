@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azteka Tattoo | Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font awesome icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{%static 'css/stylecopy.css'%}">
+  </head>
+  
+
+    <!-- header -->
+    <header>
+      <nav class = "navbar">
+        <div class = "container">
+          <div class = "navbar-nav">
+            <a href = "/">home</a>
+            <a href = "/blogs/">blogs</a>
+            <a href = "/about/">about</a>
+            <a href = "/perfil/">{{ user.username }}</a>
+            <a href = "/login/">iniciar sesion</a>
+            <a href = "/register/">registrarse</a>
+            <a href = "/logout/">cerrar sesion</a>
+          </div>
+        </div>
+      </nav>
+      <div class = "banner">
+        <div class = "container">
+          <h1 class = "banner-title">
+            <span>Azteka</span> Tattoo
+          </h1>
+          <p>Todo lo que tenes que saber sobre tatuajes</p>
+        </div>
+      </div>
+    </header>
+    <!-- end of header -->
+    
+    <!-- end of blog -->
+
+    <!-- about -->
+    <body>
+    <section class = "about" id = "about">
+      <div class = "container">
+        <div class = "about-content">
+          <div>
+            <img src = "{% static "images/asad.jpg" %}" alt = "">
+          </div>
+          <div class = "about-text">
+            <div class = "title">
+              
+            </div>
+            <p>Esta es una pagina con informacion acerca de los tatuajes.</p>
+            <p>En ella encontraras todos los tipos de tatuajes, cuidados, entre otras cosas. Por lo que te invitamos a nuestros blogs donde seras libre de publicar lo que quieras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of about -->
+    </body>
+    <!-- footer -->
+    <footer>
+      <span>Proyecto Final Coderhouse.</span>
+    </footer>
+    <!-- end of footer -->
+    
+    
+  </body>
+</html>
