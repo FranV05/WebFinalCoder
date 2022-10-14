@@ -4,10 +4,11 @@
 {% load static %}
 
 {% block contenido %}
+<div style="position: relative; top: 30px">
 <form action="" method="POST">
     {% csrf_token %}
     {{form.as_p}}
 
     <button type="submit">Registrate</button>
-</form>
+</form></div>
 {% endblock %}

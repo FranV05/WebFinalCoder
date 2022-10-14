@@ -1,0 +1,37 @@
+<title>Azteka Tattoo | Brush / Avantgarde</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{%static 'css/stylecopy.css'%}">
+{% block contenido %} 
+<ul>
+    <section class = "blog" id = "blog">
+        <div class = "container">
+            <div class = "title">
+              <h2>Brush o Avantgarde</h2>
+            </div>
+            <div class = "blog-content">
+              <!-- item -->
+              <div class = "blog-item">
+                <div class = "blog-img">
+                  <img src = "{% static "images/12_avantgarde.jpg" %}" alt = "">
+                </div>
+              </div>
+              <!-- end of item -->
+              <!-- item -->
+              <div class = "blog-item">
+                <div class = "blog-img">
+                  <img src = "{% static "images/12_avantgarde1.jpg" %}" alt = "">
+                </div>
+                
+              </div>
+              <div class = "blog-item">
+                <div class = "blog-img">
+                  <img src = "{% static "images/12_brush.jpg" %}" alt = "">
+                </div>
+                
+              </div>
+              <a class="btn btn-dark" style="text-decoration: none; color: white" href="/blogs/">Volver atras</a>
+</ul>
+{% endblock %}

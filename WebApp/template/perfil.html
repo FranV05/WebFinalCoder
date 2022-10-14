@@ -4,12 +4,12 @@
 
 <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
 {% block contenido %} 
-    <div style="position: relative; top: 80px">
+    <div style="position: relative; top: 30px">
         <ul>
-            <li>{{ user.username }}</li>
-            <li>{{ user.email }}</li>
-            <li>{{ user.first_name }}</li>
-            <li>{{ user.last_name }}</li>
+            <li>Usuario: {{ user.username }}</li>
+            <li>Correo: {{ user.email }}</li>
+            <li>Nombre: {{ user.first_name }}</li>
+            <li>Apellido: {{ user.last_name }}</li>
         </ul>
         <a class="btn btn-primary" style="text-decoration: none; color: white" href="/perfil/editarPerfil">Editar Perfil</a>
         <a class="btn btn-primary" style="text-decoration: none; color: white" href="/perfil/changeAvatar">Editar Avatar</a>

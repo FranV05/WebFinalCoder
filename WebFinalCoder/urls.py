@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from WebApp.views import *
 from django.contrib.auth.views import LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +32,18 @@ urlpatterns = [
     path('perfil/changepass/', changepass),
     path('perfil/', perfil),
     path('perfil/changeAvatar', agregarAvatar),
+    path('blogs/cuidados', cuidado),
+    path('blogs/estilo1', estilo1),
+    path('blogs/estilo2', estilo2),
+    path('blogs/estilo3', estilo3),
+    path('blogs/estilo4', estilo4),
+    path('blogs/estilo5', estilo5),
+    path('blogs/estilo6', estilo6),
+    path('blogs/estilo7', estilo7),
+    path('blogs/estilo8', estilo8),
+    path('blogs/estilo9', estilo9),
+    path('blogs/estilo10', estilo10),
+    path('blogs/estilo11', estilo11),
+    path('blogs/estilo12', estilo12),
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

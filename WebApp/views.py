@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 # Create your views here.
 
-@login_required
+
 def home(request):
     avatar = Avatar.objects.filter(user = request.user.id)
     try:
@@ -28,7 +28,11 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 avatar = Avatar.objects.filter(user = request.user.id)
-                return render(request, 'home.html', {'avatar' : avatar[0].image.url})
+                try:
+                    avatar = avatar[0].image.url
+                except:
+                    avatar = None
+                return render(request, 'home.html', {'avatar' : avatar})
             else:
                 return render(request, "login.html", {'form':form})
         else:
@@ -53,13 +57,28 @@ def register(request):
 
 @login_required
 def perfil(request):
-    return render(request, "perfil.html")
+    avatar = Avatar.objects.filter(user = request.user.id)
+    try:
+        avatar = avatar[0].image.url
+    except:
+        avatar = None
+    return render(request, "perfil.html",{'avatar' : avatar})
 
 def blogs(request):
-    return render(request, "blogs.html")
+    avatar = Avatar.objects.filter(user = request.user.id)
+    try:
+        avatar = avatar[0].image.url
+    except:
+        avatar = None
+    return render(request, "blogs.html",{'avatar' : avatar})
 
 def about(request):
-    return render(request, "about.html")
+    avatar = Avatar.objects.filter(user = request.user.id)
+    try:
+        avatar = avatar[0].image.url
+    except:
+        avatar = None
+    return render(request, "about.html",{'avatar' : avatar})
 
 @login_required
 def editarPerfil(request):
@@ -124,3 +143,31 @@ def agregarAvatar(request):
         except:
             form = AvatarFormulario()
     return render(request, 'AgregarAvatar.html', {'form': form})
+
+def cuidado(request):
+    return render(request, 'blogs/cuidados.html')
+
+def estilo1(request):
+    return render(request, 'blogs/estilo1.html')
+def estilo2(request):
+    return render(request, 'blogs/estilo2.html')
+def estilo3(request):
+    return render(request, 'blogs/estilo3.html')
+def estilo4(request):
+    return render(request, 'blogs/estilo4.html')
+def estilo5(request):
+    return render(request, 'blogs/estilo5.html')
+def estilo6(request):
+    return render(request, 'blogs/estilo6.html')
+def estilo7(request):
+    return render(request, 'blogs/estilo7.html')
+def estilo8(request):
+    return render(request, 'blogs/estilo8.html')
+def estilo9(request):
+    return render(request, 'blogs/estilo9.html')
+def estilo10(request):
+    return render(request, 'blogs/estilo10.html')
+def estilo11(request):
+    return render(request, 'blogs/estilo11.html')
+def estilo12(request):
+    return render(request, 'blogs/estilo12.html')
