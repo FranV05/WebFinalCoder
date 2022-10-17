@@ -11,4 +11,4 @@ Instrucciones:
 2- En la terminal ejecutar 'py manage.py makemigrations' y 'py manage.py migrate' para realizar las migraciones.
 3- Finalmente utilizar inicia la pagina web ejecutando 'py manage.py runserver'
 
-Video de prueba: *link*
+Video de prueba: (https://youtu.be/XeX8si0gsts)
