@@ -1,9 +1,19 @@
-<h1>Cambiar Contraseña</h1>
+<title>Azteka Tattoo | Cambiar Contraseña</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %} 
+    <div style="position: relative; top: 30px;left: 10px;">
 <h1>{{ usuario }}</h1>
 
 <form action="" method="POST"> {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <input type="submit" value="Aceptar">
+    <input class="btn btn-dark" type="submit" value="Aceptar">
 </form>
+    </div>    
+{% endblock %}
+
+

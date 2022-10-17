@@ -32,6 +32,10 @@
           <li class="nav-item" style="position: absolute;top: 10px; right: 100px">
             <img src="{{ avatar }}" height="50">
         </li> 
+      {% else %}
+        <li class="nav-item" style="position: absolute;top: 10px; right: 100px">
+          <img src="{% static "images/avatardefault.png" %}" height="50">
+      </li> 
       {% endif %} 
         <li class="nav-item" style="position: absolute; right: 0px">
           <a class="nav-link active" aria-current="page" href="/perfil/">{{user.username}}</a>

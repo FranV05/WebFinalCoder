@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from WebApp.models import Avatar
-from WebApp.forms import form_estudiantes, UserRegisterForm, UserEditForm, ChangePasswordForm, AvatarFormulario
+from WebApp.models import *
+from WebApp.forms import *
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required

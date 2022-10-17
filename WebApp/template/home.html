@@ -22,7 +22,9 @@
               <a href = "/blogs/">blogs</a>
               <a href = "/about/">acerca</a>
               {% if avatar %}
-                <a style="position: absolute; top: 10px; right: 100px"><img src="{{ avatar }}" height="50"></a>   
+                <a style="position: absolute; top: 10px; right: 100px"><img src="{{ avatar }}" height="50"></a>
+              {% else %}
+                <a style="position: absolute; top: 10px; right: 100px"><img src="{% static "images/avatardefault.png" %}" height="50"></a>    
               {% endif %}        
               <a  href = "/perfil/" style="position: absolute; top: 30px; right: 0px">{{ user.username }} </a>
               <a href = "/logout/">cerrar sesion</a>

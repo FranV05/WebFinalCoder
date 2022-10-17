@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avatar</title>
-</head>
-<body>
-    <form action="" method="POST" enctype="multipart/form-data"> {%csrf_token%}
-        {{ form.as_p}}
-        <input type="submit" value="Aceptar">
-    </form>
-</body>
-</html>
+<title>Azteka Tattoo | Agregar Avatar</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+{% block contenido %} 
+    <div style="position: relative; top: 30px;left: 10px;">
+        <form action="" method="POST" enctype="multipart/form-data"> {%csrf_token%}
+            {{ form.as_p}}
+            <input class="btn btn-dark" type="submit" value="Aceptar">
+        </form>
+    </div>    
+{% endblock %}
