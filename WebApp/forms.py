@@ -2,11 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 
-class form_estudiantes(forms.Form):
-    nombre = forms.CharField(max_length=30)
-    apellido = forms.CharField(max_length=30)
-    email = forms.EmailField()
-
 class UserRegisterForm(UserCreationForm):
     username = forms.CharField(label = "Usuario", widget = forms.TextInput())
     email = forms.EmailField()
