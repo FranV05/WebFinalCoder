@@ -45,5 +45,10 @@ urlpatterns = [
     path('blogs/estilo10', estilo10),
     path('blogs/estilo11', estilo11),
     path('blogs/estilo12', estilo12),
+    path('posts/', PostsList.as_view(), name="Posts"),
+    path('new/', PostCreate.as_view(), name="Create"),
+    path('<pk>/', PostDetail.as_view(), name="Detail"),
+    path('update/<pk>', PostUpdate.as_view(), name="Update"),
+    path('delete/<pk>', PostDelete.as_view(), name="Delete"),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

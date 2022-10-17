@@ -6,6 +6,9 @@ from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, Pass
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # Create your views here.
 
 
@@ -142,7 +145,7 @@ def agregarAvatar(request):
             form = AvatarFormulario()
         except:
             form = AvatarFormulario()
-    return render(request, 'AgregarAvatar.html', {'form': form})
+    return render(request, 'AgregarAvatar.html', {'form': form},)
 
 def cuidado(request):
     return render(request, 'blogs/cuidados.html')
@@ -171,3 +174,30 @@ def estilo11(request):
     return render(request, 'blogs/estilo11.html')
 def estilo12(request):
     return render(request, 'blogs/estilo12.html')
+
+class PostsList(ListView):
+
+    model = Posts
+    template_name = "posts/posts_list.html"
+
+class PostDetail(DetailView):
+
+    model = Posts
+    template_name = "posts/posts_detail.html"
+
+class PostCreate(CreateView):
+    template_name = "posts/posts_form.html"
+    model = Posts
+    success_url = "/posts/"
+    fields = ['titulo', 'subtitulo', 'cuerpo', 'autor', 'fecha']
+
+class PostUpdate(UpdateView):
+    template_name = "posts/posts_form.html"
+    model = Posts
+    success_url = "/posts/"
+    fields = ['titulo', 'subtitulo', 'cuerpo']
+
+class PostDelete(DeleteView):
+    template_name = "posts/posts_delete.html"
+    model = Posts
+    success_url = "/posts/"

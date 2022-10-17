@@ -1,0 +1,55 @@
+<title>Azteka Tattoo | Posts</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{%static 'css/stylecopy.css'%}">
+{% block contenido %} 
+
+<div style="position: relative; top: 30px;left: 10px;">
+                {% if object_list %}
+                
+                {% for posts in object_list %}
+                <div class = "blog-item">
+                <div class="blog-text">
+                    
+                        <h2>{{posts.titulo}}</h2>
+                        <h4>{{posts.subtitulo}}</h4>
+                    
+                    <p class="post-meta">Posteado por {{posts.autor.first_name}} {{posts.autor.last_name}} el {{posts.fecha}}</p>
+                    <a href="{%url 'Detail' posts.id%}">Leer más</a>
+                </div></div>
+                {% endfor %}
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="container mt-5">
+                        {% if request.user.is_authenticated %}
+                        <a href="/new/" class="btn btn-primary">Nueva publicación</a>
+                        {% else %}
+                        <p>
+                            Para crear una publicación
+                            <a href="/login/" class="btn btn-primary">inicia sesión</a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% else %}
+
+                        <h2>No existen publicaciones aún</h2>
+                        {% if request.user.is_authenticated %} 
+                        <a href="/new/" class="btn btn-primary">Nueva publicación</a>
+                        {% else %}
+                        <p>
+                            Para crear una publicación
+                            <a href="/login/" class="btn btn-primary">inicia sesión</a>
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% endif %}
+
+
+</div>
+ 
+{% endblock %}

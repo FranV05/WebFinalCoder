@@ -20,11 +20,11 @@ class UserRegisterForm(UserCreationForm):
         help_texts: {k: "" for k in fields}
 
 class UserEditForm(UserChangeForm):
-    username = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Username'}))
-    Email = forms.EmailField(widget= forms.TextInput(attrs={'placeholder': 'Email'}))
-    first_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'First Name'}))
-    last_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Last Name'}))
-    password = forms.CharField(widget= forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    username = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Usuario'}))
+    Email = forms.EmailField(widget= forms.TextInput(attrs={'placeholder': 'Correo'}))
+    first_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Nombre'}))
+    last_name = forms.CharField(widget= forms.TextInput(attrs={'placeholder': 'Apellido'}))
+    password = forms.CharField(widget= forms.PasswordInput(attrs={'placeholder': 'Insertar Contraseña'}))
 
     class Meta:
         model = User
@@ -43,3 +43,11 @@ class ChangePasswordForm(PasswordChangeForm):
 
 class AvatarFormulario(forms.Form):
     avatar = forms.ImageField()
+
+class PostsForm(forms.Form):
+
+    titulo = forms.CharField(max_length=40)
+    subtitulo = forms.CharField(max_length=40)
+    cuerpo = forms.CharField(max_length=1000)
+    autor = forms.CharField(max_length=40)
+    fecha = forms.DateField()

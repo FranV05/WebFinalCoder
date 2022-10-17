@@ -1,0 +1,22 @@
+<title>Azteka Tattoo | Post</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{%static 'css/stylecopy.css'%}">
+{% block contenido %} 
+
+<div style="position: relative; top: 30px;left: 10px;">
+    <form method="post">
+        {% csrf_token %}
+        ¿Confirmas borrar la publicacion {{object}}?
+        <div class="container mt-5">
+            <button type="submit" class="btn btn-dark">
+                <span class="glyphicon glyphicon-ok"></span>Confirmar
+            </button>
+            <a href="{% url 'Posts' %}" class="btn btn-default">Cancelar</a>
+        </div>
+    </form>
+</div>
+ 
+{% endblock %}

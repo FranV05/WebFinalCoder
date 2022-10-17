@@ -1,0 +1,30 @@
+<title>Azteka Tattoo | Post</title>
+{% extends "modelo.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+<link rel="stylesheet" href="{%static 'css/stylecopy.css'%}">
+{% block contenido %} 
+
+<div style="position: relative; top: 30px;left: 10px;">
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class = "blog-item">
+                <div class="blog-text">
+                    <h1>{{posts.titulo}}</h1>
+                    <h2>{{posts.subtitulo}}</h2>
+                    <p>{{posts.cuerpo}}</p>
+                    {% if request.user.is_authenticated %}
+                    <a href="{%url 'Update' posts.id%}" class="btn btn-dark">Editar</a>
+                    <a href="{%url 'Delete' posts.id%}" class="btn btn-danger">Borrar</a>
+                    <a href="{% url 'Posts' %}" class="btn btn-dark">Regresar</a>
+                    {% else %}
+                    <a href="{% url 'Posts' %}" class="btn btn-dark">Regresar</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+ 
+{% endblock %}

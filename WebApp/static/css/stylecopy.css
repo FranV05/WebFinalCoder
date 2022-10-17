@@ -195,14 +195,17 @@ header{
 
 /* blog */
 .blog{
-    background: #f9f9f9;
     padding: 4.5rem 0;
 }
 .blog-content{
     margin: 2rem 0;
 }
+.blog-item{
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+}
 .blog-img{
-    position: relative;
+    overflow: hidden;
 }
 .blog-img span{
     position: absolute;
